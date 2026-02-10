@@ -1,0 +1,6 @@
+langchain==1.2.7
+langchain-community==0.0.32
+crewai==0.30.0
+langchain-ollama
+streamlit
+litellm
