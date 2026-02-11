@@ -1,3 +1,7 @@
+# pyright: reportMissingImports=false
+
+
+
 from crewai import Task
 
 def situation_task(agent, user_input):

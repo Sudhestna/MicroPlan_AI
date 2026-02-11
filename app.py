@@ -1,3 +1,6 @@
+# pyright: reportMissingImports=false
+
+
 import streamlit as st
 from crew_setup import run_microplan
 

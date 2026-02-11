@@ -1,3 +1,6 @@
+# pyright: reportMissingImports=false
+
+
 from crewai import Crew
 from agents import (
     situation_agent,

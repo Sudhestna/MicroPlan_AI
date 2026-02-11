@@ -1,3 +1,6 @@
+# pyright: reportMissingImports=false
+
+
 from crewai import Agent,LLM
 from langchain_ollama import ChatOllama
 
