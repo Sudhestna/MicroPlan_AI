@@ -6,8 +6,7 @@ from crew_setup import run_microplan
 
 st.set_page_config(page_title="MicroPlan AI", layout="centered")
 
-st.title("🧠 MicroPlan AI")
-st.subheader("Turn one sentence into a realistic action plan")
+st.title("MicroPlan AI")
 
 user_input = st.text_input(
     "Describe your situation in one sentence:",

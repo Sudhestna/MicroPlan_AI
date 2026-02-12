@@ -38,6 +38,6 @@ def run_microplan(user_input):
 
     crew.kickoff()
     return {
-    "plan": t3.output.raw,
+    "plan": t4.output.raw,
     "explanation": t5.output.raw
 }

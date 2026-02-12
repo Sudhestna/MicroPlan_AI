@@ -40,6 +40,9 @@ def plan_task(agent, situation_output, constraint_output):
         - Fit within the time limit
         - Match energy level
         - Be immediately actionable
+        STRICT RULE:
+        - The total time MUST NOT exceed available time.
+        - Explicitly ensure total time ≤ available time
 
         Situation:
         {situation_output}
@@ -54,15 +57,29 @@ def plan_task(agent, situation_output, constraint_output):
 def validation_task(agent, plan_output):
     return Task(
         description=f"""
-        Validate the following micro-plan.
-        Ensure it is realistic and not overwhelming.
+        You are a strict plan validator.
+
+        Carefully review the micro-plan.
+
+        1. Calculate total time of all time blocks.
+        2. If total time exceeds available time:
+           - Reduce, merge, or adjust blocks.
+        3. Ensure TOTAL time is LESS THAN OR EQUAL to available time.
+        4. Do NOT add suggestions.
+        5. Do NOT explain.
+        6. Do NOT add commentary.
+        7. Return ONLY the corrected final explained micro-plan.
+
+        IMPORTANT:
+        Output only the final plan with time blocks.
 
         Plan:
         {plan_output}
         """,
-        expected_output="Validation result with any adjustments if needed",
+        expected_output="Corrected micro-plan only",
         agent=agent
     )
+
 
 def explanation_task(agent, situation_output, plan_output):
     return Task(
